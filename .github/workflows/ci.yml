@@ -10,11 +10,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the repo
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Make script executable
+      # Step 2: Make scripts executable
+      - name: Make backup script executable
         run: chmod +x scripts/backup.sh
 
+      - name: Make log analyzer script executable
+        run: chmod +x scripts/log_analyzer.sh
+
+      # Step 3: Run backup script
       - name: Run backup script
-        run: ./scripts/backup.sh
+        working-directory: ${{ github.workspace }}
+        run: bash ./scripts/backup.sh
+
+      # Step 4: Run log analyzer script
+      - name: Run log analyzer script
+        working-directory: ${{ github.workspace }}
+        run: bash ./scripts/log_analyzer.sh
