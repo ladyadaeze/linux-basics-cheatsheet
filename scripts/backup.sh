@@ -1,19 +1,20 @@
 #!/bin/bash
 set -e
 
-# Get absolute path to project root
+# Determine absolute path to project root
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+PROJECT_ROOT="$SCRIPT_DIR/.."
 
 # Load environment variables from project root
-if [ -f "$PROJECT_ROOT/.env" ]; then
-    source "$PROJECT_ROOT/.env"
+ENV_FILE="$PROJECT_ROOT/.env"
+if [ -f "$ENV_FILE" ]; then
+    source "$ENV_FILE"
 else
     echo "Error: .env file not found in $PROJECT_ROOT"
     exit 1
 fi
 
-# Use variables
+# Continue with backup
 DATE=$(date +%Y-%m-%d_%H-%M-%S)
 BACKUP_PATH="$BACKUP_DIR/backup_$DATE"
 LOG_FILE="$LOG_DIR/backup_$DATE.log"
