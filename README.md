@@ -1,54 +1,33 @@
+# Linux Basics & DevOps Starter Project 🚀
 
-# Linux Basics Cheatsheet 🚀
+This repository demonstrates:
 
-This repository contains:
-
-- Essential Linux shell commands
-- File management commands
-- Permission management examples
-- A simple Bash automation script
-
----
-
-## 1️⃣ Shell Commands
-
-| Command | Description |
-|----------|------------|
-| pwd | Show current directory |
-| ls -l | List files with details |
-| cd | Change directory |
-| mkdir | Create directory |
-| touch | Create file |
+- Linux shell commands
+- File management & permissions
+- Bash automation scripts
+- Logging & analysis
+- CI/CD with GitHub Actions
 
 ---
 
-## 2️⃣ File Operations
+## Scripts
 
-| Command | Description |
-|----------|------------|
-| cp | Copy file |
-| mv | Move/Rename file |
-| rm | Remove file |
-| cat | View file contents |
-| find | Search for files |
+1. **backup.sh**  
+   - Creates a timestamped backup folder  
+   - Copies `.txt` files into it  
+   - Logs actions into `logs/` folder
 
----
-
-## 3️⃣ Permissions
-
-Example:
-
-chmod 755 script.sh
-
-Meaning:
-Owner: read, write, execute  
-Group: read, execute  
-Others: read, execute  
+2. **log_analyzer.sh**  
+   - Reads the latest backup log  
+   - Shows total lines and last 5 log entries
 
 ---
 
-## 🔥 Automation Script
+## Usage
 
-This repo also contains a simple backup automation script written in Bash.
+```bash
+# Run backup
+./scripts/backup.sh
 
-
+# Analyze latest log
+./scripts/log_analyzer.sh
