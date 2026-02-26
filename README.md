@@ -1,22 +1,54 @@
-# Linux Basics Cheatsheet
 
-## 1. Shell Commands
-- pwd : Print current directory
-- ls : List files
-- cd : Change directory
-- mkdir : Make directory
-- touch : Create empty file
+# Linux Basics Cheatsheet 🚀
 
-## 2. File Commands
-- cp : Copy files
-- mv : Move/Rename files
-- rm : Remove files
-- cat : Show file contents
-- echo : Print text
+This repository contains:
 
-## 3. Permissions
-- ls -l : List with permissions
-- chmod 755 file.sh : Change file permissions
-- chown user file.txt : Change file owner
+- Essential Linux shell commands
+- File management commands
+- Permission management examples
+- A simple Bash automation script
+
+---
+
+## 1️⃣ Shell Commands
+
+| Command | Description |
+|----------|------------|
+| pwd | Show current directory |
+| ls -l | List files with details |
+| cd | Change directory |
+| mkdir | Create directory |
+| touch | Create file |
+
+---
+
+## 2️⃣ File Operations
+
+| Command | Description |
+|----------|------------|
+| cp | Copy file |
+| mv | Move/Rename file |
+| rm | Remove file |
+| cat | View file contents |
+| find | Search for files |
+
+---
+
+## 3️⃣ Permissions
+
+Example:
+
+chmod 755 script.sh
+
+Meaning:
+Owner: read, write, execute  
+Group: read, execute  
+Others: read, execute  
+
+---
+
+## 🔥 Automation Script
+
+This repo also contains a simple backup automation script written in Bash.
 
 
