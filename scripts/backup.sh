@@ -1,16 +1,12 @@
 #!/bin/bash
 set -e
 
-# Determine absolute path to project root
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$SCRIPT_DIR/.."
-
-# Load environment variables from project root
-ENV_FILE="$PROJECT_ROOT/.env"
+# Load environment variables from repo root
+ENV_FILE="$(pwd)/.env"
 if [ -f "$ENV_FILE" ]; then
     source "$ENV_FILE"
 else
-    echo "Error: .env file not found in $PROJECT_ROOT"
+    echo "Error: .env file not found in $(pwd)"
     exit 1
 fi
 
