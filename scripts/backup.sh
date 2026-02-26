@@ -1,13 +1,15 @@
 #!/bin/bash
-
 set -e
 
+# Load environment variables
+source ../.env
+
 DATE=$(date +%Y-%m-%d_%H-%M-%S)
-BACKUP_DIR="backup_$DATE"
-LOG_FILE="backup.log"
+BACKUP_PATH="$BACKUP_DIR/backup_$DATE"
+LOG_FILE="$LOG_DIR/backup_$DATE.log"
 
 echo "[$(date)] Starting backup..." >> $LOG_FILE
-
+mkdir -p $BACKUP_PATH
 mkdir -p $BACKUP_DIR
 
 if ls *.txt 1> /dev/null 2>&1; then
