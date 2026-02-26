@@ -38,3 +38,23 @@ jobs:
 
       - name: Run backup script
         run: ./scripts/backup.sh
+name: Linux Backup CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Make script executable
+        run: chmod +x scripts/backup.sh
+
+      - name: Run backup script
+        run: ./scripts/backup.sh
